@@ -15,7 +15,7 @@ public class LoggingHandler {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Around("within(com.manjula.todo.service..*)")
+    @Around("within(com.slmanju.todo.service..*)")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
         String args = Arrays.toString(joinPoint.getArgs());
