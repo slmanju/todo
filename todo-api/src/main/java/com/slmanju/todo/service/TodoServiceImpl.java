@@ -45,7 +45,7 @@ public class TodoServiceImpl implements TodoService {
     public void delete(Long id) {
         Optional<Todo> found = todoRepository.findById(id);
         if (found.isPresent()) {
-            todoRepository.delete(id);
+            todoRepository.deleteById(id);
         } else {
             throw new ResourceNotFoundException(id, "Todo not found");
         }

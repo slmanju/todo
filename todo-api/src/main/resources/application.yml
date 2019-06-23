@@ -1,0 +1,31 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/todos?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+# exception handling
+#spring.mvc.throw-exception-if-no-handler-found = true
+#spring.resources.add-mappings = false
+
+# logging
+logging:
+  level:
+    org.springframework.web: DEBUG
+    slmanju: DEBUG
+#  pattern:
+#    console: %yellow(%d{yyyy-MM-dd HH:mm:ss}) %highlight(%-5level) %magenta(%logger{36}) - %green(%.-100msg) %n
+#    file: %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+  file: /home/manjula/application.log
+
+# If your terminal supports ANSI, color output will be used
+
+#spring.output.ansi.enabled = ALWAYS
