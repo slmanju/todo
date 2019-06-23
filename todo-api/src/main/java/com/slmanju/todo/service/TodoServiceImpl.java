@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
+
 @Service
 public class TodoServiceImpl implements TodoService {
 
@@ -52,8 +54,10 @@ public class TodoServiceImpl implements TodoService {
     @Override
     public List<TodoDto> findAll() {
         Optional<List<Todo>> todos = todoRepository.findAllTodos();
-        return todos.map(all -> all.stream().map(Todo::view).collect(Collectors.toList()))
-                .orElseThrow(() -> new ResourceNotFoundException(null, "Todos not found"));
+        return todos.orElseThrow(() -> new ResourceNotFoundException(null, "Todos not found"))
+                .stream()
+                .map(Todo::view)
+                .collect(toList());
     }
 
 }
