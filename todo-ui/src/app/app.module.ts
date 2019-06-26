@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
 import { AboutComponent } from './components/about/about.component';
 import { TodosComponent } from './components/todos/todos.component';
+import { AddComponent } from './components/todos/add/add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    TodosComponent
+    TodosComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
