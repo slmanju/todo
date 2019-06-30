@@ -4,10 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FormsModule } from '@angular/forms';
+
 import { MaterialModule } from './modules/material.module';
 import { AboutComponent } from './components/about/about.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { AddComponent } from './components/todos/add/add.component';
+import { TodoService } from './services/todo.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,10 @@ import { AddComponent } from './components/todos/add/add.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MaterialModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ TodoService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
