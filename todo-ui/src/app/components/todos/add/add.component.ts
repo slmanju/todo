@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from './todo';
 import { TodoService } from 'src/app/services/todo.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add',
@@ -9,15 +10,21 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class AddComponent implements OnInit {
 
-  todoModel = new Todo("", "");
+  todoModel = new Todo(0, "", "");
 
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
 
-  submitForm(formValue: any) {
-    this.todoService.save(formValue);
+  submitForm(todoForm: any) {
+    if (todoForm.form.valid) {
+      this.todoService.save(todoForm.value);
+      this.snackBar.open("Your todo is saved.", "Ok", {
+        duration: 2000,
+      });
+    }
   }
 
 }

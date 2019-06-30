@@ -2,17 +2,16 @@
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-10" *ngFor="let todo of todos">
         <mat-card>
             <mat-card-header>
-                <mat-card-title>Lorem, ipsum dolor.</mat-card-title>
+                <mat-card-title>{{todo.title}}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <p>{{todo.description}}</p>
             </mat-card-content>
             <mat-card-actions>
-                <div class="row">
-                    <button mat-button color="primary">View</button>
-                    <button mat-button color="primary">Update</button>
-                    <button mat-button color="primary">Delete</button>
-                </div>
+                <button mat-icon-button color="primary"><mat-icon>update</mat-icon></button>
+                <button mat-icon-button color="primary" (click)="onDeleteTodo(todo.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </mat-card-actions>
         </mat-card>
     </div>

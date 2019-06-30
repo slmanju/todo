@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from  '@angular/common/http';
+
 import { MaterialModule } from './modules/material.module';
 import { AboutComponent } from './components/about/about.component';
 import { TodosComponent } from './components/todos/todos.component';
@@ -25,6 +27,7 @@ import { TodoService } from './services/todo.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     MaterialModule
   ],
   providers: [ TodoService ],
