@@ -14,13 +14,15 @@ import { AboutComponent } from './components/about/about.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { AddComponent } from './components/todos/add/add.component';
 import { TodoService } from './services/todo.service';
+import { TodoDashboardComponent } from './todos/todo-dashboard/todo-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     TodosComponent,
-    AddComponent
+    AddComponent,
+    TodoDashboardComponent
   ],
   imports: [
     BrowserModule,
