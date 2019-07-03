@@ -11,18 +11,18 @@ import { HttpClientModule } from  '@angular/common/http';
 
 import { MaterialModule } from './modules/material.module';
 import { AboutComponent } from './components/about/about.component';
-import { TodosComponent } from './components/todos/todos.component';
 import { AddComponent } from './components/todos/add/add.component';
 import { TodoService } from './services/todo.service';
-import { TodoDashboardComponent } from './todos/todo-dashboard/todo-dashboard.component';
+import { TodoComponent } from './components/todos/todo/todo.component';
+import { TodoDashboardComponent } from './components/todos/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    TodosComponent,
     AddComponent,
-    TodoDashboardComponent
+    TodoDashboardComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

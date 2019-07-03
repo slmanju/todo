@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Todo } from '../add/todo';
 import { TodoService } from 'src/app/services/todo.service';
-import { Todo } from './add/todo';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-todos',
-  templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.scss']
+  selector: 'app-todo-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class TodosComponent implements OnInit {
+export class TodoDashboardComponent implements OnInit {
+
   todos: Todo[];
 
   constructor(private todoService: TodoService,
@@ -19,11 +20,7 @@ export class TodosComponent implements OnInit {
   }
 
   init() {
-    this.todoService
-        .findAll()
-        .subscribe((data) => {
-            this.todos = data;
-        });
+    this.todoService.findAll().subscribe(data => this.todos = data);
   }
 
   onDeleteTodo(id: number) {
