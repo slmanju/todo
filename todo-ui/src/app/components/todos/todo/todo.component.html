@@ -6,7 +6,7 @@
         <p>{{todo.description}}</p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-icon-button color="primary">
+        <button mat-icon-button color="primary" [routerLink]="['update-todo/', todo.id]">
             <mat-icon>update</mat-icon>
         </button>
         <button mat-icon-button color="primary" (click)="onDeleteTodo(todo.id)">

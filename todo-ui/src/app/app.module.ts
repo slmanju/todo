@@ -15,6 +15,7 @@ import { AddComponent } from './components/todos/add/add.component';
 import { TodoService } from './services/todo.service';
 import { TodoComponent } from './components/todos/todo/todo.component';
 import { TodoDashboardComponent } from './components/todos/dashboard/dashboard.component';
+import { UpdateComponent } from './components/todos/update/update.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TodoDashboardComponent } from './components/todos/dashboard/dashboard.c
     AboutComponent,
     AddComponent,
     TodoDashboardComponent,
-    TodoComponent
+    TodoComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -31,12 +31,18 @@ export class TodoService {
   }
 
   findById(id: number) {
-    return of(this.fakeTodos.find(todo => todo.id === id));
+    return of(this.fakeTodos.find(todo => todo.id == id));
     // return this.httpClient.get<Todo>(this.baseUrl + '/' + id);
   }
 
-  update(todo: Todo) {
-    return this.httpClient.put(this.baseUrl + '/' + todo.id, todo);
+  update(id: number, todo: Todo) {
+    // return this.httpClient.put(this.baseUrl + '/' + todo.id, todo);
+    let updatable = this.findById(id);
+    updatable.subscribe(td => {
+      td.title = todo.title;
+      td.description = todo.description;
+    });
+    return of(this.fakeTodos);
   }
 
   delete(id: number) {

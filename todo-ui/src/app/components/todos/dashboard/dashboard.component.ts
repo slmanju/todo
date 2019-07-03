@@ -24,12 +24,15 @@ export class TodoDashboardComponent implements OnInit {
   }
 
   onDeleteTodo(id: number) {
-    console.log("emmited" + id);
     this.todoService.delete(id);
     this.snackBar.open("Your todo is deleted.", "Ok", {
       duration: 2000,
     });
     this.init();
+  }
+
+  onUpdateTodo(id: number) {
+    console.log(id);
   }
 
 }
